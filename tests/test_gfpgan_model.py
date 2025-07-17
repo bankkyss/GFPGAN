@@ -5,7 +5,7 @@ from basicsr.archs.stylegan2_arch import StyleGAN2Discriminator
 from basicsr.data.paired_image_dataset import PairedImageDataset
 from basicsr.losses.losses import GANLoss, L1Loss, PerceptualLoss
 
-from gfpgan.archs.arcface_arch import ResNetArcFace
+from gfpgan.archs.adaface_arch import ResNetAdaFace
 from gfpgan.archs.gfpganv1_arch import FacialComponentDiscriminator, GFPGANv1
 from gfpgan.models.gfpgan_model import GFPGANModel
 
@@ -25,7 +25,7 @@ def test_gfpgan_model():
     assert isinstance(model.net_d_right_eye, FacialComponentDiscriminator)
     assert isinstance(model.net_d_mouth, FacialComponentDiscriminator)
     # identity network
-    assert isinstance(model.network_identity, ResNetArcFace)
+    assert isinstance(model.network_identity, ResNetAdaFace)
     # losses
     assert isinstance(model.cri_pix, L1Loss)
     assert isinstance(model.cri_perceptual, PerceptualLoss)

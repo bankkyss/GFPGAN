@@ -35,7 +35,7 @@ network_d_mouth:
   type: FacialComponentDiscriminator
 
 network_identity:
-  type: ResNetArcFace
+  type: ResNetAdaFace
   block: IRBlock
   layers: [2, 2, 2, 2]
   use_se: False

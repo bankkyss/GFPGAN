@@ -96,7 +96,7 @@ network_d_mouth:
   type: FacialComponentDiscriminator
 
 network_identity:
-  type: ResNetArcFace
+  type: ResNetAdaFace
   block: IRBlock
   layers: [2, 2, 2, 2]
   use_se: False
@@ -110,7 +110,7 @@ path:
   pretrain_network_d_left_eye: ~
   pretrain_network_d_right_eye: ~
   pretrain_network_d_mouth: ~
-  pretrain_network_identity: experiments/pretrained_models/arcface_resnet18.pth
+  pretrain_network_identity: experiments/pretrained_models/adaface_resnet18.pth
   # resume
   resume_state: ~
   ignore_resume_networks: ['network_identity']
